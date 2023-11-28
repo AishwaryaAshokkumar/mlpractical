@@ -41,7 +41,7 @@ train_data_loader = DataLoader(train_data, batch_size=args.batch_size, shuffle=T
 val_data_loader = DataLoader(val_data, batch_size=args.batch_size, shuffle=True, num_workers=2)
 test_data_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=True, num_workers=2)
 
-if args.block_type == 'conv_block':
+if args.block_type == 'conv_block' and args.use_batch_norm == False and args.use_residual_conn == False:
     processing_block_type = ConvolutionalProcessingBlock
     dim_reduction_block_type = ConvolutionalDimensionalityReductionBlock
 elif args.block_type == 'conv_block' and args.use_batch_norm == True and args.use_residual_conn == False:
