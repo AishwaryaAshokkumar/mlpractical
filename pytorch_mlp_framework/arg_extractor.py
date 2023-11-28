@@ -48,6 +48,10 @@ def get_args():
     parser.add_argument('--block_type', type=str, default='conv_block',
                         help='Type of convolutional blocks to use in our network '
                              '(This argument will be useful in running experiments to debug your network)')
+    parser.add_argument('--use_batch_norm', nargs="?", type=str2bool, default=False,
+                        help='A flag indicating whether we will add Batch Normalization to the network')
+    parser.add_argument('--use_residual_conn', nargs="?", type=str2bool, default=False,
+                        help='A flag indicating whether we will use Residual Connections in the network')
     args = parser.parse_args()
     print(args)
     return args
