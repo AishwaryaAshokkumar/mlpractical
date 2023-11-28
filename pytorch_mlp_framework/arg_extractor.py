@@ -52,6 +52,8 @@ def get_args():
                         help='A flag indicating whether we will add Batch Normalization to the network')
     parser.add_argument('--use_residual_conn', nargs="?", type=str2bool, default=False,
                         help='A flag indicating whether we will use Residual Connections in the network')
+    parser.add_argument('--learning_rate', nargs="?", type=float, default=0.001,
+                        help='Learning rate used in training')
     args = parser.parse_args()
     print(args)
     return args
